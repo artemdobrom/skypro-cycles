@@ -19,6 +19,9 @@ public class Main {
         task14();
         task15();
         task16();
+        task17();
+        task18();
+
     }
 
     public static void task1() {
@@ -107,83 +110,128 @@ public class Main {
         System.out.println("Циклы. Задача 11");
         int deposit = 29000;
         int total = 0;
-        int i= 1;
-        while ( total< 2_459_000 ) {
-            total = (int) (total + total +15000);
+        int i = 1;
+        while (total < 2_459_000) {
+            total = (int) (total + total + 15000);
             total = total + deposit;
             System.out.println("месяц " + i + " сумма накоплений равна " + total + " рублей.");
         }
     }
+
     public static void task12() {
         System.out.println("Циклы. Задача 12");
         int i = 0;
         while (i < 10) {
             i = i + 1;
-            System.out.print(+i + " ");}
+            System.out.print(+i + " ");
+        }
         System.out.println(" ");
 
-        for (int j =10;j > 0; j--) {
-                System.out.print(+j + " ");
+        for (int j = 10; j > 0; j--) {
+            System.out.print(+j + " ");
 
         }
     }
+
     public static void task13() {
         System.out.println("Циклы. Задача 13");
-        int population= 12_000_000;
-        int natality= 17;
-        int deatRate= 8;
-        int years= 10;
+        int population = 12_000_000;
+        int natality = 17;
+        int deatRate = 8;
+        int years = 10;
 
-        for (int year=1; year<= years; year++){
-            population = population + population /1000 * natality- population / 1000* deatRate;
-            System.out.println("Год " + year + ", численность населения составляет "+ population);
+        for (int year = 1; year <= years; year++) {
+            population = population + population / 1000 * natality - population / 1000 * deatRate;
+            System.out.println("Год " + year + ", численность населения составляет " + population);
         }
     }
+
     public static void task14() {
         System.out.println("Циклы. Задача 14");
-        float deposit= 15000;
-        float percent= 0.07f;
-        int finish= 12_000_000;
+        float deposit = 15000;
+        float percent = 0.07f;
+        int finish = 12_000_000;
+        float start=0;
 
-        for (int mount=1; finish< deposit; mount++ ) {
-            deposit += deposit*percent;
-            System.out.printf("В месяце %d накоплена сумма %.2f \n", mount, deposit);
-            System.out.println("В месяце "+mount+ " накопленная сумма "+deposit);
+
+            for (int mount = 1; start < finish; mount++) {
+                start = start + (start* percent);
+                start = deposit + start;
+
+                System.out.println("В месяце " + mount + " накопленная сумма равна " + start +" рублей.");
+            }
         }
-    }
+
+
     public static void task15() {
         System.out.println("Циклы. Задача 15");
         float deposit = 15000;
         float percent = 0.07f;
         int finish = 12_000_000;
-        int i = 0;
+        float start = 0;
 
-        for (int mount = 1; finish < deposit; mount++) {
 
-            if (i % 6 == 0) {
-                System.out.printf("В месяце %d накоплена сумма %.2f \n", mount, deposit);
-                System.out.println("В месяце " + mount + " накопленная сумма " + deposit);
-
+        for (int mount = 1; start < finish; mount++) {
+            start = start + (start * percent);
+            start = deposit + start;
+            if (mount % 6 == 0) {
+                System.out.println("В месяце " + mount + " накопленная сумма равна " + start + " рублей.");
             }
         }
     }
-        public static void task16() {
-            System.out.println("Циклы. Задача 16");
-            int years = 9;
-            int mountInYear = years * 12;
-            int money = 15000;
-            float percent = 0.07f;
-
-            for (int mount = 1; mount <= mountInYear; mount++) {
-                if (mount % 6 == 0) {
-
-                System.out.println("В " + mount + " месяце, накоплено " + money);}
-                money += money + money * percent;
 
 
+
+
+
+    public static void task16() {
+        System.out.println("Циклы. Задача 16");
+        int years = 9;
+        int mountInYear = years * 12;
+        int money = 15000;
+        float percent = 0.07f;
+        float start=0;
+
+        for (int mount = 1; mount <= mountInYear; mount++) {
+            start = money + start;
+            start = start + (money*percent);
+            if (mount % 6 == 0) {
+
+                System.out.println("В " + mount + " месяце, накоплено " + start);
             }
+
 
         }
+    }
+
+    public static void task17() {
+        System.out.println("Циклы. Задача 17");
+        int friday = 4;
+        int mount=31;
+
+        for (friday=4; friday<mount;friday= friday+7 ){
+            System.out.println("Сегодня пятница "+ friday+ "-ое число. Необходимо подготовит отчёт. ");
+
+        }
+    }
+    public static void task18() {
+        System.out.println("Циклы. Задача 18");
+        int periodicity = 79;
+        int today= 2023 ;
+        int past = today - 200;
+        int future = today + 100;
+
+
+        for ( int year= 0; year <future ; year= year+ periodicity ) {
+            if (year > past) {
+
+                System.out.println( year );
             }
+        }
+    }
+
+
+}
+
 
 
